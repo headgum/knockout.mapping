@@ -781,7 +781,7 @@
         var parentName = options.parentName;
         visitPropertiesOrArrayEntries(unwrappedRootObject, function(indexer) {
             var escapedIndexer = escapePropertyNameComponent(indexer);
-            if (options.ignore && ko.utils.arrayIndexOf(options.ignore, escapedIndexer) != -1) return;
+            if (options.ignore && ko.utils.arrayIndexOf(options.ignore, escapedIndexer) !== -1) return;
 
             var propertyValue = unwrappedRootObject[indexer];
             options.parentName = getPropertyName(parentName, unwrappedRootObject, indexer);

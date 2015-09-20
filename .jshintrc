@@ -1,0 +1,16 @@
+{
+    "nonew": true,
+    "curly": true,
+    "noarg": true,
+    "forin": true,
+    "noempty": true,
+    "eqeqeq": true,
+    "strict": true,
+    "undef": true,
+    "bitwise": true,
+    "browser": true,
+    "trailing":  true,
+    "newcap":    true,
+    "immed":     true,
+    "freeze":    true
+}
