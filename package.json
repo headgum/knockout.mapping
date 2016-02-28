@@ -1,6 +1,6 @@
 {
   "name": "knockout-mapping",
-  "version": "2.5.0",
+  "version": "2.6.0",
   "description": "Knockout Mapping plugin",
   "main": "dist/knockout.mapping.js",
   "files": [

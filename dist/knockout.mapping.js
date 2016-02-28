@@ -1,5 +1,5 @@
 /*!
- * Knockout Mapping plugin v2.5.0
+ * Knockout Mapping plugin v2.6.0
  * (c) 2013 Steven Sanderson, Roy Jacobs - http://knockoutjs.com/
  * License: MIT (http://www.opensource.org/licenses/mit-license.php)
  */
@@ -282,6 +282,7 @@
             }
 
             var realDeferEvaluation = options.deferEvaluation;
+            var realIsPure = options.pure;
 
             var isRemoved = false;
 
@@ -315,7 +316,7 @@
             options.deferEvaluation = true; // will either set for just options, or both read/options.
             var realDependentObservable = realKoDependentObservable(read, owner, options);
 
-            if (!realDeferEvaluation) {
+            if (!realDeferEvaluation && !realIsPure) {
                 realDependentObservable = wrap(realDependentObservable);
                 dependentObservables.push(realDependentObservable);
             }

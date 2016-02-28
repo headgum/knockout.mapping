@@ -63,7 +63,7 @@ var newData = ko.mapping.toJS(viewModel);
 
 ```
 
-Run this example in [JSFiddle](http://jsfiddle.net/wmeqx7ss/).
+Run this example in [JSFiddle](http://jsfiddle.net/wmeqx7ss/141/).
 
 
 ## Test
