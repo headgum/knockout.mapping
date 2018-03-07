@@ -11,13 +11,11 @@
 
     if (typeof require === "function" && typeof exports === "object" && typeof module === "object") {
         // CommonJS or Node: hard-coded dependency on "knockout"
-        factory(require("knockout"), exports);
-    }
-    else if (typeof define === "function" && define["amd"]) {
+        factory(require("tko"), exports);
+    } else if (typeof define === "function" && define["amd"]) {
         // AMD anonymous module with hard-coded dependency on "knockout"
-        define(["knockout", "exports"], factory);
-    }
-    else {
+        define(["tko", "exports"], factory);
+    } else {
         // <script> tag: use the global `ko` object, attaching a `mapping` property
         if (typeof ko === 'undefined') {
             throw new Error('Knockout is required, please ensure it is loaded before loading this mapping plug-in');
@@ -30,7 +28,7 @@
 
     ko.mapping = exports;
 
-    var DEBUG=true;
+    var DEBUG = true;
     var mappingProperty = "__ko_mapping__";
     var realKoDependentObservable = ko.dependentObservable;
     var mappingNesting = 0;
@@ -78,13 +76,11 @@
                 destType = exports.getType(destination[key]);
                 if (key && destination[key] && destType !== "array" && destType !== "string") {
                     extendObject(destination[key], source[key]);
-                }
-                else {
+                } else {
                     var bothArrays = exports.getType(destination[key]) === "array" && exports.getType(source[key]) === "array";
                     if (bothArrays) {
                         destination[key] = unionArrays(destination[key], source[key]);
-                    }
-                    else {
+                    } else {
                         destination[key] = source[key];
                     }
                 }
@@ -105,7 +101,7 @@
         return unwrapped && unwrapped[mappingProperty];
     };
 
-    exports.fromJS = function(jsObject /*, inputOptions, target*/) {
+    exports.fromJS = function(jsObject /*, inputOptions, target*/ ) {
         if (arguments.length === 0) {
             throw new Error("When calling ko.fromJS, pass the object you want to convert.");
         }
@@ -122,8 +118,7 @@
             if (arguments.length === 2) {
                 if (arguments[1][mappingProperty]) {
                     target = arguments[1];
-                }
-                else {
+                } else {
                     options = arguments[1];
                 }
             }
@@ -159,14 +154,13 @@
             result[mappingProperty] = merge(result[mappingProperty], options);
 
             return result;
-        }
-        catch (e) {
+        } catch (e) {
             mappingNesting = 0;
             throw e;
         }
     };
 
-    exports.fromJSON = function(jsonString /*, options, target*/) {
+    exports.fromJSON = function(jsonString /*, options, target*/ ) {
         var args = Array.prototype.slice.call(arguments, 0);
         args[0] = ko.utils.parseJson(jsonString);
         return exports.fromJS.apply(this, args);
@@ -197,8 +191,7 @@
     exports.defaultOptions = function() {
         if (arguments.length > 0) {
             defaultOptions = arguments[0];
-        }
-        else {
+        } else {
             return defaultOptions;
         }
     };
@@ -213,7 +206,7 @@
     };
 
     exports.getType = function(x) {
-        if ((x) && (typeof (x) === "object")) {
+        if ((x) && (typeof(x) === "object")) {
             if (x.constructor === Date) return "date";
             if (x.constructor === Array) return "array";
         }
@@ -255,15 +248,13 @@
     function mergeArrays(a, b) {
         if (a === undefined) {
             a = [];
-        }
-        else if (exports.getType(a) !== "array") {
+        } else if (exports.getType(a) !== "array") {
             a = [a];
         }
 
         if (b === undefined) {
             b = [];
-        }
-        else if (exports.getType(b) !== "array") {
+        } else if (exports.getType(b) !== "array") {
             b = [b];
         }
 
@@ -360,8 +351,7 @@
                         parent: callbackParams.parent,
                         skip: emptyReturn
                     });
-                }
-                else {
+                } else {
                     return options[parentName].create({
                         data: data || callbackParams.data,
                         parent: callbackParams.parent
@@ -404,12 +394,10 @@
                             if (ko.isWriteableObservable(rootObject)) {
                                 rootObject(updateCallback(rootObject));
                                 mappedRootObject = rootObject;
-                            }
-                            else {
+                            } else {
                                 mappedRootObject = updateCallback(rootObject);
                             }
-                        }
-                        else {
+                        } else {
                             mappedRootObject = rootObject;
                         }
                         break;
@@ -420,20 +408,17 @@
                                 valueToWrite = updateCallback(mappedRootObject);
                                 mappedRootObject(valueToWrite);
                                 return valueToWrite;
-                            }
-                            else {
+                            } else {
                                 valueToWrite = ko.utils.unwrapObservable(rootObject);
                                 mappedRootObject(valueToWrite);
                                 return valueToWrite;
                             }
-                        }
-                        else {
+                        } else {
                             var hasCreateOrUpdateCallback = hasCreateCallback() || hasUpdateCallback();
 
                             if (hasCreateCallback()) {
                                 mappedRootObject = createCallback();
-                            }
-                            else {
+                            } else {
                                 mappedRootObject = ko.observable(ko.utils.unwrapObservable(rootObject));
                             }
 
@@ -445,8 +430,7 @@
                         }
                 }
 
-            }
-            else {
+            } else {
                 mappedRootObject = ko.utils.unwrapObservable(mappedRootObject);
                 if (!mappedRootObject) {
                     if (hasCreateCallback()) {
@@ -456,8 +440,7 @@
                             result = updateCallback(result);
                         }
                         return result;
-                    }
-                    else {
+                    } else {
                         if (hasUpdateCallback()) {
                             //Removed ambiguous parameter result
                             return updateCallback();
@@ -509,8 +492,7 @@
                         if (mappedRootObject[indexer]() !== value) {
                             mappedRootObject[indexer](value);
                         }
-                    }
-                    else {
+                    } else {
                         value = mappedRootObject[indexer] === undefined ? value : ko.utils.unwrapObservable(value);
                         mappedRootObject[indexer] = value;
                     }
@@ -518,8 +500,7 @@
                     options.mappedProperties[fullPropertyName] = true;
                 });
             }
-        }
-        else { //mappedRootObject is an array
+        } else { //mappedRootObject is an array
             var changes = [];
 
             var hasKeyCallback = false;
@@ -586,8 +567,7 @@
                         var newValue = updateCallback(item, value);
                         if (ko.isWriteableObservable(item)) {
                             item(newValue);
-                        }
-                        else {
+                        } else {
                             item = newValue;
                         }
                     }
@@ -638,8 +618,7 @@
 
                         if (mappedItem === emptyReturn) {
                             passedOver++;
-                        }
-                        else {
+                        } else {
                             newContents[index - passedOver] = mappedItem;
                         }
 
@@ -707,8 +686,7 @@
         return ko.utils.arrayMap(ko.utils.unwrapObservable(array), function(item) {
             if (callback) {
                 return mapKey(item, callback);
-            }
-            else {
+            } else {
                 return item;
             }
         });
@@ -718,8 +696,7 @@
         if (exports.getType(rootObject) === "array") {
             for (var i = 0; i < rootObject.length; i++)
                 visitorCallback(i);
-        }
-        else {
+        } else {
             for (var propertyName in rootObject) {
                 if (rootObject.hasOwnProperty(propertyName)) {
                     visitorCallback(propertyName);
@@ -744,8 +721,7 @@
             if (parentName) {
                 propertyName += "[" + escapePropertyNameComponent(indexer) + "]";
             }
-        }
-        else {
+        } else {
             if (parentName) {
                 propertyName += ".";
             }
@@ -755,7 +731,7 @@
     }
 
     function escapePropertyNameComponent(indexer) {
-        var escapedIndexer  = (''+indexer)
+        var escapedIndexer = ('' + indexer)
             .replace(/~/g, '~~')
             .replace(/\[/g, '~[')
             .replace(/]/g, '~]')
@@ -773,8 +749,7 @@
 
         if (!canHaveProperties(unwrappedRootObject)) {
             return callback(rootObject, options.parentName);
-        }
-        else {
+        } else {
             options = fillOptions(options, unwrappedRootObject[mappingProperty]);
 
             // Only do a callback, but ignore the results
@@ -850,9 +825,8 @@
         var findBucket = function(key) {
             var bucketKey;
             try {
-                bucketKey = key;//JSON.stringify(key);
-            }
-            catch (e) {
+                bucketKey = key; //JSON.stringify(key);
+            } catch (e) {
                 bucketKey = "$$$";
             }
 

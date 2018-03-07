@@ -16,7 +16,7 @@
     "ko"
   ],
   "peerDependencies": {
-    "knockout": ">=2.2.0"
+    "tko": "*"
   },
   "devDependencies": {
     "del": "^2.0.2",
@@ -38,10 +38,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/crissdev/knockout.mapping.git"
+    "url": "https://github.com/headgum/knockout.mapping.git"
   },
   "bugs": {
-    "url": "https://github.com/crissdev/knockout.mapping/issues"
+    "url": "https://github.com/headgum/knockout.mapping/issues"
   },
   "license": "MIT"
 }

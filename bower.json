@@ -25,7 +25,8 @@
     "gulpfile.js",
     "knockout.mapping.js"
   ],
-  "dependencies": {
-    "knockout": ">=2.2.0"
+  "dependencies":
+  {
+    "tko": "*"
   }
 }
