@@ -19,18 +19,18 @@
     "tko": "*"
   },
   "devDependencies": {
-    "del": "^2.0.2",
+    "del": "^3.0.0",
     "gulp": "^3.8.11",
-    "gulp-header": "^1.2.2",
+    "gulp-header": "^2.0.5",
     "gulp-if": "^2.0.0",
     "gulp-jshint": "^2.0.0",
     "gulp-plumber": "^1.0.1",
-    "gulp-qunit": "^1.2.1",
-    "gulp-rename": "^1.2.0",
-    "gulp-replace": "^0.5.3",
-    "gulp-sourcemaps": "^1.3.0",
-    "gulp-uglify": "^1.1.0",
-    "jshint": "^2.9.1",
+    "gulp-qunit": "^2.0.2",
+    "gulp-rename": "^1.4.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.1",
+    "jshint": "^2.9.6",
     "jshint-stylish": "^2.0.1"
   },
   "scripts": {
