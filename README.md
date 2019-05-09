@@ -17,7 +17,7 @@ Official documentation [here](http://knockoutjs.com/documentation/plugins-mappin
 #### Bower
 
 ```sh
-bower install bower-knockout-mapping --save-dev
+bower install bower-knockout-mapping --save
 ```
 
 #### NPM
@@ -63,13 +63,12 @@ var newData = ko.mapping.toJS(viewModel);
 
 ```
 
-Run this example in [JSFiddle](http://jsfiddle.net/wmeqx7ss/141/).
+Run this example in [JSFiddle](http://jsfiddle.net/wmeqx7ss/280/).
 
 
 ## Test
 
-Continuous Integration tests are done with Travis, and the associated Gulp task is `test-ci`.
-For development `test` task is used, which runs the tests against the latest version of Knockout.
+Unless `CI` environment variable is defined, the tests use the latest version Knockout.
 
 
 ## License

@@ -7,6 +7,9 @@
     "dist",
     "HISTORY.md"
   ],
+  "engines": {
+    "node": ">=6.9.5"
+  },
   "keywords": [
     "knockout",
     "mapping",
@@ -20,21 +23,21 @@
   },
   "devDependencies": {
     "del": "^3.0.0",
-    "gulp": "^3.8.11",
+    "gulp": "^4.0.0",
     "gulp-header": "^2.0.5",
-    "gulp-if": "^2.0.0",
-    "gulp-jshint": "^2.0.0",
-    "gulp-plumber": "^1.0.1",
-    "gulp-qunit": "^2.0.2",
+    "gulp-if": "^2.0.2",
+    "gulp-jshint": "^2.1.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-qunit": "^2.0.1",
     "gulp-rename": "^1.4.0",
     "gulp-replace": "^1.0.0",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.1",
-    "jshint": "^2.9.6",
-    "jshint-stylish": "^2.0.1"
+    "jshint": "^2.10.2",
+    "jshint-stylish": "^2.2.1"
   },
   "scripts": {
-    "test": "gulp test-ci"
+    "test": "gulp test"
   },
   "repository": {
     "type": "git",
