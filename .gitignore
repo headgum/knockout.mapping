@@ -1,6 +1,5 @@
 node_modules/
 .idea/
-dist/
 
 # Ignore package-lock.json and yarn.lock
 package-lock.json
