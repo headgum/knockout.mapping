@@ -11,7 +11,7 @@
 
     if (typeof require === "function" && typeof exports === "object" && typeof module === "object") {
         // CommonJS or Node: hard-coded dependency on "knockout"
-        factory(require("tko"), exports);
+        factory(require("@tko/build.reference/dist/build.reference.es6"), exports);
     } else if (typeof define === "function" && define["amd"]) {
         // AMD anonymous module with hard-coded dependency on "knockout"
         define(["tko", "exports"], factory);
