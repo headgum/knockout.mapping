@@ -19,7 +19,7 @@
     "ko"
   ],
   "peerDependencies": {
-    "@tko/build.reference": "*",
+    "@tko/build.reference": "*"
   },
   "devDependencies": {
     "del": "^3.0.0",
