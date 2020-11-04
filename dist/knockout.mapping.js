@@ -4,21 +4,22 @@
     /*jshint sub:true,curly:false*/
     /*global ko,require,exports,define,module*/
 
-    factory(require('@tko/build.reference/dist/build.reference'), exports);
 
-    // if (typeof require === "function" && typeof exports === "object" && typeof module === "object") {
-    //     // CommonJS or Node: hard-coded dependency on "knockout"
-    //     factory(require("tko"), exports);
-    // } else if (typeof define === "function" && define["amd"]) {
-    //     // AMD anonymous module with hard-coded dependency on "knockout"
-    //     define(["tko", "exports"], factory);
-    // } else {
-    //     // <script> tag: use the global `ko` object, attaching a `mapping` property
-    //     if (typeof ko === 'undefined') {
-    //         throw new Error('Knockout is required, please ensure it is loaded before loading this mapping plug-in');
-    //     }
-    //     factory(ko, ko.mapping = {});
-    // }
+    if (typeof require === "function" && typeof exports === "object" && typeof module === "object") {
+        // CommonJS or Node: hard-coded dependency on "knockout"
+        // factory(require("tko"), exports);
+        factory(require('@tko/build.reference/dist/build.reference'), exports);
+    } else if (typeof define === "function" && define["amd"]) {
+        // AMD anonymous module with hard-coded dependency on "knockout"
+        define(["tko", "exports"], factory);
+        // factory(require('@tko/build.reference/dist/build.reference'), exports);
+    } else {
+        // <script> tag: use the global `ko` object, attaching a `mapping` property
+        if (typeof ko === 'undefined') {
+            throw new Error('Knockout is required, please ensure it is loaded before loading this mapping plug-in');
+        }
+        factory(ko, ko.mapping = {});
+    }
 }(function(ko, exports) {
     /*jshint sub:true,curly:false*/
     'use strict';

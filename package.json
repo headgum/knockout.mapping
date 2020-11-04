@@ -1,6 +1,6 @@
 {
   "name": "@headgum/tko-mapping",
-  "version": "2.8.0",
+  "version": "2.9.0",
   "description": "Knockout Mapping plugin",
   "main": "dist/knockout.mapping.js",
   "files": [
@@ -33,7 +33,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@headgum/tko-mapping": "^2.7.0",
     "acorn": "^5.7.4",
     "ajv": "^6.12.6",
     "ansi-colors": "^1.1.0",
