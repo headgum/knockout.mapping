@@ -1,5 +1,5 @@
 /*!
- * Knockout Mapping plugin v2.6.0
+ * Knockout Mapping plugin v2..0
  * (c) 2013 Steven Sanderson, Roy Jacobs - http://knockoutjs.com/
  * License: MIT (http://www.opensource.org/licenses/mit-license.php)
  */
@@ -11,7 +11,7 @@
 
     if (typeof require === "function" && typeof exports === "object" && typeof module === "object") {
         // CommonJS or Node: hard-coded dependency on "knockout"
-        factory(require("@tko/build.reference/dist/build.reference.es6"), exports);
+        factory(require("tko"), exports);
     } else if (typeof define === "function" && define["amd"]) {
         // AMD anonymous module with hard-coded dependency on "knockout"
         define(["tko", "exports"], factory);
