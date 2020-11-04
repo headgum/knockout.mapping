@@ -1,6 +1,6 @@
 {
   "name": "tko-mapping",
-  "version": "2..0",
+  "version": "2.7.0",
   "description": "Knockout Mapping plugin",
   "main": "dist/knockout.mapping.js",
   "files": [
