@@ -14,14 +14,7 @@ var sourceMaps = require('gulp-sourcemaps');
 
 var buildConfig = {
   outputPath: 'dist',
-  pkg: require('./package.json'),
-  banner: [
-    '/*!',
-    ' * Knockout Mapping plugin v<%= pkg.version %>',
-    ' * (c) 2013 Steven Sanderson, Roy Jacobs - http://knockoutjs.com/',
-    ' * License: MIT (http://www.opensource.org/licenses/mit-license.php)',
-    ' */\n'
-  ].join('\n')
+  pkg: require('./package.json')
 };
 
 
